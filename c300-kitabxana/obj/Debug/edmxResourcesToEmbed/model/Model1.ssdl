@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="books">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="productionDate" Type="datetime" />
+    <Property Name="Counts" Type="int" />
+    <Property Name="AuthorId" Type="int" />
+  </EntityType>
+  <EntityType Name="Books_to_Readers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookId" Type="int" />
+    <Property Name="ReaderId" Type="int" />
+    <Property Name="Buydate" Type="datetime" />
+    <Property Name="Returndate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Faculty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Readers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="FacultyId" Type="int" />
+  </EntityType>
+  <Association Name="FK__books__AuthorId__3E52440B">
+    <End Role="Author" Type="Self.Author" Multiplicity="0..1" />
+    <End Role="books" Type="Self.books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="books">
+        <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Books_to___BookI__44FF419A">
+    <End Role="books" Type="Self.books" Multiplicity="0..1" />
+    <End Role="Books_to_Readers" Type="Self.Books_to_Readers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="books">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Books_to_Readers">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Books_to___Reade__45F365D3">
+    <End Role="Readers" Type="Self.Readers" Multiplicity="0..1" />
+    <End Role="Books_to_Readers" Type="Self.Books_to_Readers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Readers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Books_to_Readers">
+        <PropertyRef Name="ReaderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Readers__Faculty__398D8EEE">
+    <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
+    <End Role="Readers" Type="Self.Readers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculty">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Readers">
+        <PropertyRef Name="FacultyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="books" EntityType="Self.books" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Books_to_Readers" EntityType="Self.Books_to_Readers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Faculty" EntityType="Self.Faculty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Readers" EntityType="Self.Readers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__books__AuthorId__3E52440B" Association="Self.FK__books__AuthorId__3E52440B">
+      <End Role="Author" EntitySet="Author" />
+      <End Role="books" EntitySet="books" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Books_to___BookI__44FF419A" Association="Self.FK__Books_to___BookI__44FF419A">
+      <End Role="books" EntitySet="books" />
+      <End Role="Books_to_Readers" EntitySet="Books_to_Readers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Books_to___Reade__45F365D3" Association="Self.FK__Books_to___Reade__45F365D3">
+      <End Role="Readers" EntitySet="Readers" />
+      <End Role="Books_to_Readers" EntitySet="Books_to_Readers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Readers__Faculty__398D8EEE" Association="Self.FK__Readers__Faculty__398D8EEE">
+      <End Role="Faculty" EntitySet="Faculty" />
+      <End Role="Readers" EntitySet="Readers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

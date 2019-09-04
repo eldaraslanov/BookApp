@@ -1,0 +1,16 @@
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\bin\Debug\c300-kitabxana.exe.config
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\bin\Debug\c300-kitabxana.exe
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\bin\Debug\c300-kitabxana.pdb
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\bin\Debug\EntityFramework.dll
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\bin\Debug\EntityFramework.xml
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\obj\Debug\c300-kitabxana.csprojAssemblyReference.cache
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\obj\Debug\c300_kitabxana.addbook.resources
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\obj\Debug\c300_kitabxana.Form1.resources
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\obj\Debug\c300_kitabxana.Properties.Resources.resources
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\obj\Debug\c300-kitabxana.csproj.GenerateResource.cache
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\obj\Debug\c300-kitabxana.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\obj\Debug\c300-kitabxana.csproj.CopyComplete
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\obj\Debug\c300-kitabxana.exe
+C:\Users\User\source\repos\c300-kitabxana\c300-kitabxana\obj\Debug\c300-kitabxana.pdb
